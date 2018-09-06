@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration File</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/my.js"></script>
+</head>
+
+<body ng-app="apps" ng-controller="ctrl">
+	<div class="container">
+		<header class="heading">
+			<h2>Student Mark Details</h2>
+		</header>
+
+		<hr></hr>
+
+		<form class="form-horizontal">
+
+			<!-- Options From an Array select 2 -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">College :</label>
+				<div class="col-sm-4">
+					<select class="form-control"
+						ng-options="college.collegeName for college in colleges"
+						ng-model="college">
+						<option value="">Select College..</option>
+					</select>
+				</div>
+				<div ng-show="college">
+					<div class="col-sm-2">
+						<label class="control-label">Selected College:</label>
+					</div>
+					<div class="col-sm-3">
+						<textarea class="form-control">{{college}}</textarea>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End Of options an Array select 2 -->
+
+
+			<!-- Options in the HTML Template -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Branch :</label>
+				<div class="col-sm-4">
+					<select class="form-control" ng-model="branch">
+						<option value="">Select Branch..</option>
+						<option>Computer Science</option>
+						<option>Mechanical</option>
+						<option>Civil</option>
+						<option>Marine</option>
+					</select>
+				</div>
+				<div ng-show="branch">
+					<div class="col-sm-2">
+						<label class="control-label ">Selected Branch :</label>
+					</div>
+					<div class="col-sm-3">
+						<p>
+							<b>{{branch}}</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End Of HTML Template -->
+
+
+			<!-- Options an Array Select 3 -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Student Name :</label>
+				<div class="col-sm-4">
+					<select class="form-control"
+						ng-options="student.firstName for student in StudentName"
+						ng-model="student">
+						<option value="">Select Student Name...</option>
+					</select>
+				</div>
+				<div ng-show="student">
+					<div class="col-sm-2">
+						<label class="control-label">Selected Student:</label>
+					</div>
+					<div class="col-sm-3">
+						<textarea rows="3" cols="3" class="form-control">{{student}}</textarea>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End Options an Array Select 3-->
+
+
+			<!-- Options an Array Object 2 -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Year :</label>
+				<div class="col-sm-4">
+					<select class="form-control" ng-model="year">
+						<option value="">Select Year..</option>
+						<option value="1">First Year</option>
+						<option value="2">Second Year</option>
+						<option value="3">Third Year</option>
+						<option value="4">Final Year</option>
+					</select>
+				</div>
+				<div ng-show="year">
+					<div class="col-sm-2">
+						<label class="control-label ">Year :</label>
+					</div>
+					<div class="col-sm-3">
+						<p>
+							<b>{{year}}</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End of Options an Array Object 2 -->
+
+
+			<!-- Options an Array Select 1 -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Exam :</label>
+				<div class="col-sm-4">
+					<select class="form-control" ng-model="exams"
+						ng-options="x for x in exam">
+						<option value="">Select Exam..</option>
+					</select>
+				</div>
+				<div ng-show="exams">
+					<div class="col-sm-2">
+						<label class="control-label">Selected Exam:</label>
+					</div>
+					<div class="col-sm-3">
+						<p>
+							<b>{{exams}}</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End of an Array Select 1 -->
+
+
+			<!-- Array Select 4 -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Subject :</label>
+				<div class="col-sm-4">
+					<select class="form-control"
+						ng-options="subject.firstName+' '+subject.lastName for subject in SubjectName"
+						ng-model="subject">
+						<option value="">Select Subject...</option>
+					</select>
+				</div>
+				<div ng-show="subject">
+					<div class="col-sm-2">
+						<label class="control-label">Selected Subject:</label>
+					</div>
+					<div class="col-sm-3">
+						<p>
+							<b>{{subject.lastName}}</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End of an Array Select 4 -->
+
+
+			<!-- Array Select 5 -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Staff :</label>
+				<div class="col-sm-4">
+					<select class="form-control"
+						ng-options="staff.firstName+' '+staff.lastName for staff in StaffName"
+						ng-model="staff">
+						<option value="">Select Staff..</option>
+					</select>
+				</div>
+				<div ng-show="staff">
+					<div class="col-sm-2">
+						<label class="control-label">Subject Staff:</label>
+					</div>
+					<div class="col-sm-3">
+						<textarea rows="3" cols="3" class="form-control">{{staff}}</textarea>
+					</div>
+				</div>
+			</div>
+
+			<!-- // End of an Array Select 5-->
+
+
+			<!-- Array of Object 1 -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Grade :</label>
+				<div class="col-sm-4">
+					<select class="form-control" ng-model="grade">
+						<option value="">Select Grade..</option>
+						<option value="95-100">S</option>
+						<option value="85-95">A</option>
+						<option value="75-85">B</option>
+						<option value="65-75">C</option>
+						<option value="55-65">D</option>
+						<option value="50-55">E</option>
+						<option value="Fail">U</option>
+					</select>
+				</div>
+				<div ng-show="grade">
+					<div class="col-sm-2">
+						<label class="control-label ">Marks :</label>
+					</div>
+					<div class="col-sm-3">
+						<p>
+							<b>{{grade}}</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End of an Array Object 1 -->
+
+
+			<!-- Selecting Multiple Options an Array Select -->
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Passed Subjects :</label>
+				<div class="col-sm-4">
+					<select class="form-control" ng-model="passed"
+						ng-options="pass.subject for pass in subjects" multiple>
+					</select>
+				</div>
+				<div ng-show="passed">
+					<div class="col-sm-2">
+						<label class="control-label">Pass Subjects:</label>
+					</div>
+					<div class="col-sm-3">
+						<p>
+							<b>{{passed}}</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- //End of Selecting Multiple Options an Array Select -->
+
+		</form>
+	</div>
+</body>
+</html>
